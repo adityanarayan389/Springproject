@@ -62,6 +62,7 @@ class NotesController(private val reposjitory: DatabaseRepository) {
         @RequestParam(required = true) ownerId: String
     ): List<NoteResponse>{
 
+
         return reposjitory.findByOwnerId(ObjectId(ownerId)).map {
             it.toResponse()
 
